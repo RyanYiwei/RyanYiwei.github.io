@@ -15,15 +15,32 @@
       .replace(/>/g, "&gt;");
   }
 
-  // Minimal inline markdown: **bold**, *italic*, [text](url)
+  // Minimal inline markdown: **bold**, *italic*, [text](url), $latex$
   function inline(str) {
     if (!str) return "";
-    var html = escapeHtml(str);
+    var mathParts = [];
+    var withPlaceholders = String(str).replace(/\$([^$]+)\$/g, function (m, expr) {
+      var rendered;
+      try {
+        rendered = window.katex
+          ? katex.renderToString(expr, { throwOnError: false })
+          : escapeHtml(m);
+      } catch (err) {
+        rendered = escapeHtml(m);
+      }
+      mathParts.push(rendered);
+      return "\u0000MATH" + (mathParts.length - 1) + "\u0000";
+    });
+
+    var html = escapeHtml(withPlaceholders);
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, text, url) {
       return '<a href="' + url + '" target="_blank" rel="noopener">' + text + "</a>";
     });
     html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    html = html.replace(/\u0000MATH(\d+)\u0000/g, function (m, i) {
+      return mathParts[parseInt(i, 10)];
+    });
     return html;
   }
 
@@ -88,15 +105,18 @@
       var entries = parseEntries(text);
       return entries.map(function (e) {
         var period = e.fields.period ? e.fields.period[0] : "";
-        var details = (e.fields.detail || []).map(inline).join(" ");
+        var details = (e.fields.detail || []).map(function (d) {
+          return '<p class="project-detail">' + inline(d) + "</p>";
+        }).join("");
         var links = parseLinks(e.fields.link).map(function (l) {
           return '<a href="' + l.url + '" target="_blank" rel="noopener">' + inline(l.label) + "</a>";
         }).join(" / ");
         return (
           '<div class="card project-card">' +
-          "<strong>" + inline(e.title) + "</strong>" +
+          '<p class="project-title"><strong>' + inline(e.title) + "</strong>" +
           (period ? " (" + inline(period) + ")" : "") +
-          (details ? " — " + details : "") +
+          "</p>" +
+          details +
           (links ? '<div class="links">' + links + "</div>" : "") +
           "</div>"
         );

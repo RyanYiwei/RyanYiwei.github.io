@@ -9,13 +9,19 @@
   - period: 时间段，比如 10/2022 - 03/2026
 
   两条经历之间用单独一行 --- 隔开。
-  支持 **加粗**、*斜体*、[链接文字](网址)。
+  支持 **加粗**、*斜体*、[链接文字](网址)、$LaTeX 公式$（如 $\pi_0$）。
 -->
+
+### ETH Zurich
+- detail: M.Sc. Robotics, Systems and Control
+- period: 09.2026 - current
+
+---
 
 ### Technical University of Munich
 - detail: B.Sc. Electrical Engineering and Information Technology
-- detail: Average grade 1.2/5, rank 3 within the top 2% of the cohort
-- period: 10/2022 - 03/2026
+- detail: Average grade 1.1/5, rank 3 within the top 2% of the cohort
+- period: 10/2022 - 02/2026
 
 ---
 

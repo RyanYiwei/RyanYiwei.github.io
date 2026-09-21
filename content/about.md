@@ -2,10 +2,10 @@
   About Me 说明
   ------------------------------------------------------------
   直接写普通文字就行，空一行表示分段。
-  支持：**加粗**、*斜体*、[链接文字](网址)
+  支持：**加粗**、*斜体*、[链接文字](网址)、$LaTeX 公式$（如 $\pi_0$）
 -->
 
 
-Hello! I am **Yiwei Wang**, a B.Sc. student in Electrical Engineering and Information Technology at the **Technical University of Munich (TUM)**, expected to graduate in March 2026.
+Hello! I am **Yiwei Wang**, currently pursuing an M.Sc. in Robotics, Systems and Control at **ETH Zürich**.
 
-I am currently interested in robotics combined with computer vision, foundation models, and learning-based control, aiming to enable robots to autonomously and reliably perform manufacturing tasks.
+I am interested in building autonomous robotic systems that combine visual perception, foundation models, planning, and learning-based control, with a particular focus on long-horizon manipulation in complex real-world environments. My goal is to enable robots to reason over multi-step tasks, adapt through interaction, and execute manipulation reliably and safely.

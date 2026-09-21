@@ -383,6 +383,10 @@ body.theme-luka .exp-detail {
   color: var(--luka-secondary);
 }
 
+body.theme-luka .experience-content p.exp-detail {
+  margin-bottom: 6px;
+}
+
 body.theme-luka .exp-period {
   font-size: 13px;
   color: var(--luka-accent);
@@ -400,6 +404,19 @@ body.theme-luka .news-item .news-text {
 body.theme-luka .project-card {
   font-size: 15px;
   line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+body.theme-luka .project-card:last-child {
+  margin-bottom: 0;
+}
+
+body.theme-luka .project-card p {
+  margin: 0 0 6px;
+}
+
+body.theme-luka .project-card p:last-of-type {
+  margin-bottom: 0;
 }
 
 body.theme-luka .publications ol.bibliography {
