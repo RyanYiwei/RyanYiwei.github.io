@@ -17,7 +17,7 @@
 -->
 
 - name: Yiwei Wang
-- avatar: assets/img/avatar.jpg
-- email: yiwei03.wang@tum.de
+- avatar: assets/img/avatar.png
+- email: yiweiwang@student.ethz.ch
 - github: https://github.com/RyanYiwei
 - linkedin: https://www.linkedin.com/in/yiwei-wang-ryan/?locale=en

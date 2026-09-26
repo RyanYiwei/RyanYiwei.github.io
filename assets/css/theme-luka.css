@@ -200,11 +200,11 @@ body.theme-luka .image.avatar {
 }
 
 body.theme-luka .image.avatar img {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 6px 24px var(--luka-shadow);
+  width: 260px;
+  height: auto;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 body.theme-luka .site-name {
@@ -547,8 +547,8 @@ body.theme-luka strong {
 
 @media (max-width: 640px) {
   body.theme-luka .image.avatar img {
-    width: 148px;
-    height: 148px;
+    width: 180px;
+    height: auto;
   }
 
   body.theme-luka .site-name {
